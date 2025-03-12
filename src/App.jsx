@@ -1,5 +1,5 @@
 import './App.css'
-import NotePad from './feature/components/notePad'
+import NotePad from './feature/components/NotePad'
 function App() {
 
 
