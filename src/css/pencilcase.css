@@ -1,0 +1,115 @@
+/*Accordion*/
+#PencilCaseContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right:0;
+}
+
+#PencilCase {
+    background-color: #0f37d4c2;
+    right: inherit;
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+#PencilCaseBox{
+    position:relative;
+    z-index: 4;
+    width: fit-content;
+    background-color: aquamarine;
+    height: 30svh;
+    position:static;
+}
+
+
+#PencilCaseBlanket{
+    display: flex;
+    align-self: center;
+    gap: .3rem;
+    padding:1svw;   
+    position: relative;
+    z-index: 3;
+    background-color: antiquewhite;
+
+}
+#ShowColor {
+    display: flex;
+    height: 7.5rem;
+    width: 8rem;
+    padding-right: .2rem;
+    background-color: #b8b4b484;
+    justify-content: flex-end;
+    align-items: center;
+    clip-path: circle(55% at 80% 50%);
+    z-index: 3;
+    cursor: pointer;
+    transition: height 250ms,right 250ms,background-color 250ms ease-in-out;     
+}
+
+#ShowColor:hover{
+    height: 10rem;
+    right: .1svw;
+    background-color:hsl(165, 84%, 15%,0.5);
+    &:hover{
+        #PencilCase{
+            transition: transform 250ms;
+        }
+    }
+}
+
+#PaletteContainer {
+    /*--c: #0000 64%,#000 66% 98%,#0000 101%;
+    animation: show 1s infinite linear;*/
+    display: flex;
+    
+}
+
+/*
+#PaletteContainer:hover{
+    
+    transition: transform 3s;
+    transform: rotate(360deg);
+    cursor: pointer;
+
+}
+
+*/
+#PaletteIcon{
+    /*--c: #0000 64%,#000 66% 98%,#0000 101%;
+    animation: show 1s infinite linear;*/
+    position: absolute;
+    width: 4rem;
+    
+    /*Svg color*/
+    filter: invert(10%) sepia(50%) saturate(6902%) hue-rotate(299deg) brightness(50%) contrast(100%);
+    z-index: 2;
+}
+
+#ColorPallete {
+    border-radius: 50%;
+    background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    z-index: -2;
+    position: relative;
+}
+
+#ColorPalleteBehind{
+    /*Absolute so i can place it behind the svg icon*/
+    position: absolute;
+    /*Setting the custom chape*/
+    clip-path: polygon(50% 0%,83% 12%,84% 31%,76% 52%,58% 63%,22% 92%,6% 78%,0% 43%,17% 12%);
+    /*Setting gradiente colors from Red to Yellow*/
+    background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    /*Settig the position behind the SVG icon*/
+    z-index: -2;
+    position: relative;
+    height: 4rem;
+    width: 4rem;
+    
+}
+

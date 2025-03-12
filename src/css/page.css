@@ -1,0 +1,126 @@
+:root{
+    --GreenBtn:hsl(125, 93%, 22%);
+    --GreenPath: #064535;
+}
+.MainPage{
+    /*I needed to create a pattern, i tried with flexbox but it didn't work xd, so i checked in google and there is a way that you could create a pattern using the repeating-linear-gradient property of background-image*/
+    background-image: repeating-linear-gradient(var(--YellowPrimary), var(--YellowPrimary)1.9rem,var(--Black) 2rem);
+    width: 58.6vw;
+    border-radius: .5rem; 
+    display:flex;
+    flex-direction: row;
+    height: 90vh;
+    position: relative;
+}
+.MainPage::before{
+    content: '';
+    width:.16rem;
+    height: 100%;
+    background-color: var(--RedPrimary);
+    /*Set absolute values*/
+    left: 8.6vw;
+    position: absolute;
+}
+#MainContent{   
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+#HeaderPage{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;   
+    border-bottom: .16rem var(--RedPrimary) solid;   
+}
+
+/*Setting the same Title position for its input*/
+
+p,h2,textarea,input[type="text"]{
+    position: absolute;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+}
+input[type="text"]{
+    font-size: 20px;
+    font-weight: 600;
+}
+input[type="text"]::placeholder{
+   font-style: italic;
+   font-size: 15px;
+}
+/*Set values for my textarea and p tags */
+#InputText{
+    width: 50vw;
+    line-height: 2rem;
+    min-height: 80%;
+    padding:0 1rem;    
+    left: 8.6vw;
+    z-index: 1;
+    font-size: 20px;
+    font-family: 'Salsa', cursive;
+    font-weight: 600;
+}
+/*I need to layout my input text value*/
+textarea::placeholder{
+    font-style: italic;
+    font-size: 15px;
+}
+.ShowText{
+    display: none;
+    width: 50vw;
+    line-height: 2rem;
+    align-self: center;
+    padding:0 1rem;    
+    left: 8.6vw;
+    font-weight: 600;
+    font-size: 20px;
+}
+h2{
+    display: none;
+    /*24 characters*/
+}
+
+/*Download Button*/
+#btnDownload{
+    display: flex;
+    flex-direction: column;
+    gap:.2rem;
+    cursor: pointer;
+    left:10%;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    padding:.5rem;
+    border-radius:.6rem;
+    width: fit-content;
+    height:6rem;
+    background-color: var(--GreenBtn);
+    color:var(--White);
+    gap:.5rem;
+    font-weight: 400;
+    transition:transform 1000ms;
+
+    &:hover{
+        #PrintIcon{
+            filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(312deg) brightness(106%) contrast(105%);
+        }
+    }
+    
+    
+}
+#PrintContainer{
+    width: 4rem;
+}
+#PrintIcon{
+    width: 3rem;
+}
+
+#btnDownload:hover{
+    transform:scale(1.2);
+    transition: transform 250ms;
+    
+}
